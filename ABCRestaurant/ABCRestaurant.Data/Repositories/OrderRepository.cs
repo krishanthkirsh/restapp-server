@@ -1,8 +1,4 @@
-﻿using ABCRestaurant.Data;
-using ABCRestaurant.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ABCRestaurant.Data.Entities;
 
 namespace ABCRestaurant.Data.Repositories
 {

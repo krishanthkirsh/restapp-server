@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ABCRestaurant.Data.Entities
+﻿namespace ABCRestaurant.Data.Entities
 {
-    public class Menu : Entity
+    public class Menu
+        : Entity<int>
     {
-        public string MenuName { get; set; }
-        public string MenuDescription { get; set; }
-        public int Unit { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
         public double Price { get; set; }
     }
 }

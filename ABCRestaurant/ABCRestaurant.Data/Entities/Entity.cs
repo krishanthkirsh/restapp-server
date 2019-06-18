@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ABCRestaurant.Data.Entities
 {
-    public class Entity
+    public abstract class Entity<T>
     {
         [Key]
-        public int ID { get; set; }
+        public T Id { get; set; }
     }
 }
