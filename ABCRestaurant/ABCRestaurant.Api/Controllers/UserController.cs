@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ABCRestaurant.Data.Entities;
-using ABCRestaurant.Data.Repositories;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace ABCRestaurant.Api.Controllers
+﻿namespace ABCRestaurant.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

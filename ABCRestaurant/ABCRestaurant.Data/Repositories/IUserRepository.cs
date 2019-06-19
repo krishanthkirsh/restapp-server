@@ -2,7 +2,7 @@
 
 namespace ABCRestaurant.Data.Repositories
 {
-    public interface IUserRepository 
+    public interface IUserRepository
         : IRepository<User>
     { }
 }

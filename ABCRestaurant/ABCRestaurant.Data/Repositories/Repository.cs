@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ABCRestaurant.Data.Repositories
@@ -20,22 +19,15 @@ namespace ABCRestaurant.Data.Repositories
             return dbSet;
         }
 
-        public void Add(T entity)
-        {
-            dbSet.Add(entity);
-        }
-
-        public void Delete(T entity)
-        {
-            dbSet.Remove(entity);
-        }
-
         public T FindById(object Id)
         {
             return dbSet.Find(Id);
         }
 
-
+        public void Add(T entity)
+        {
+            dbSet.Add(entity);
+        }
 
         public void Update(T entity)
         {
@@ -43,11 +35,14 @@ namespace ABCRestaurant.Data.Repositories
             _dBConn.Entry(entity).State = EntityState.Modified;
         }
 
+        public void Delete(T entity)
+        {
+            dbSet.Remove(entity);
+        }
+
         public void Save()
         {
             _dBConn.SaveChanges();
         }
-
-       
     }
 }
