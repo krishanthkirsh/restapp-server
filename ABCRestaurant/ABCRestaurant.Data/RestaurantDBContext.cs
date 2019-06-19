@@ -5,9 +5,9 @@ namespace ABCRestaurant.Data
 {
     public class RestaurantDBContext : DbContext
     {
-        public RestaurantDBContext(DbContextOptions options) 
+        public RestaurantDBContext(DbContextOptions options)
             : base(options)
-        {}
+        { }
 
         public DbSet<Menu> Menus { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -17,6 +17,5 @@ namespace ABCRestaurant.Data
         {
             base.OnModelCreating(builder);
         }
-
     }
 }

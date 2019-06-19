@@ -2,10 +2,10 @@
 
 namespace ABCRestaurant.Data.Repositories
 {
-    public class OrderRepository 
-        : Repository<Order> , IOrderRepository
+    public class OrderRepository
+        : Repository<Order>, IOrderRepository
     {
-        public OrderRepository(RestaurantDBContext dBConn) 
+        public OrderRepository(RestaurantDBContext dBConn)
             : base(dBConn)
         { }
     }

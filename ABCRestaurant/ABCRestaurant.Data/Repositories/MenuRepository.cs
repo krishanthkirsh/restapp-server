@@ -2,10 +2,10 @@
 
 namespace ABCRestaurant.Data.Repositories
 {
-    public class MenuRepository 
-        : Repository<Menu>,IMenuRepository
+    public class MenuRepository
+        : Repository<Menu>, IMenuRepository
     {
-        public MenuRepository(RestaurantDBContext dBConn) 
+        public MenuRepository(RestaurantDBContext dBConn)
             : base(dBConn)
         { }
     }

@@ -15,6 +15,11 @@ namespace ABCRestaurant.Data.Repositories
             this.dbSet = dBContext.Set<T>();
         }
 
+        public IQueryable<T> List()
+        {
+            return dbSet;
+        }
+
         public void Add(T entity)
         {
             dbSet.Add(entity);
@@ -25,15 +30,12 @@ namespace ABCRestaurant.Data.Repositories
             dbSet.Remove(entity);
         }
 
-        public T FindById(int Id)
+        public T FindById(object Id)
         {
             return dbSet.Find(Id);
         }
 
-        public IEnumerable<T> List()
-        {
-            return dbSet.ToList();
-        }
+
 
         public void Update(T entity)
         {
@@ -45,5 +47,7 @@ namespace ABCRestaurant.Data.Repositories
         {
             _dBConn.SaveChanges();
         }
+
+       
     }
 }
