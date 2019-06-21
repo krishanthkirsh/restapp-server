@@ -1,10 +1,21 @@
-﻿namespace ABCRestaurant.Api.Controllers
+using ABCRestaurant.Data.Entities;
+using ABCRestaurant.Data.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ABCRestaurant.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
+
+        public UserController(IUserRepository userRepository)
+        {
+            this._userRepository = userRepository;
+        }
         // GET: api/User
         [HttpGet]
         public IEnumerable<User> Get()
