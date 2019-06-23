@@ -1,8 +1,11 @@
-using ABCRestaurant.Data.Entities;
-using ABCRestaurant.Data.Repositories;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using ABCRestaurant.Data.Entities;
+using ABCRestaurant.Data.Repositories;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ABCRestaurant.Api.Controllers
 {
@@ -18,15 +21,27 @@ namespace ABCRestaurant.Api.Controllers
         }
 
         // GET: api/Menu
+        //[HttpGet]
+        //public IEnumerable<Menu> Get()
+        //{
+        //    return _menuRepository.List().ToList();
+        //}
+
         [HttpGet]
-        public IEnumerable<Menu> Get()
+        public ActionResult<IEnumerable<Menu>> Get()
         {
             return _menuRepository.List().ToList();
         }
 
-        // GET: api/Menu/5
-        [HttpGet("{id}", Name = "Get")]
-        public Menu Get(int id)
+        //// GET: api/Menu/5
+        //[HttpGet("{id}", Name = "Get")]
+        //public Menu Get(int id)
+        //{
+        //    return _menuRepository.FindById(id);
+        //}
+
+        [HttpGet("{id}")]
+        public ActionResult<Menu> Get(int id)
         {
             return _menuRepository.FindById(id);
         }

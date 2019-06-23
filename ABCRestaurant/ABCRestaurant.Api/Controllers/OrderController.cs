@@ -1,8 +1,9 @@
-using ABCRestaurant.Data.Entities;
-using ABCRestaurant.Data.Repositories;
+﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using ABCRestaurant.Data.Entities;
+using ABCRestaurant.Data.Repositories;
 
 namespace ABCRestaurant.Api.Controllers
 {
@@ -17,17 +18,16 @@ namespace ABCRestaurant.Api.Controllers
             this._orderRepository = orderRepository;
         }
 
-        // GET: api/Order
         [HttpGet]
-        public IEnumerable<Order> Get()
+        public ActionResult<IEnumerable<Order>> Get()
         {
             List<Order> _List = this._orderRepository.List().ToList();
             return _List;
         }
 
-        // GET: api/Order/5
-        [HttpGet("{id}", Name = "Get")]
-        public Order Get(int id)
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public ActionResult<Order> Get(int id)
         {
             return this._orderRepository.FindById(id);
         }
