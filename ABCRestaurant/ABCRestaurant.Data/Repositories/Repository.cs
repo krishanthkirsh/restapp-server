@@ -27,17 +27,20 @@ namespace ABCRestaurant.Data.Repositories
         public void Add(T entity)
         {
             dbSet.Add(entity);
+            _dBConn.SaveChanges();
         }
 
         public void Update(T entity)
         {
             dbSet.Attach(entity);
             _dBConn.Entry(entity).State = EntityState.Modified;
+            _dBConn.SaveChanges();
         }
 
         public void Delete(T entity)
         {
             dbSet.Remove(entity);
+            _dBConn.SaveChanges();
         }
 
         public void Save()

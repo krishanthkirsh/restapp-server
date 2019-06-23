@@ -47,9 +47,9 @@ namespace ABCRestaurant.Api.Controllers
 
         // POST: api/User
         [HttpPost]
-        public void Post([FromBody] User Obj)
+        public void Post(User Obj)
         {
-            _userRepository.Add(Obj);
+           _userRepository.Add(Obj);
         }
 
         // PUT: api/User/5

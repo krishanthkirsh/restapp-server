@@ -20,25 +20,11 @@ namespace ABCRestaurant.Api.Controllers
             this._menuRepository = menuRepository;
         }
 
-        // GET: api/Menu
-        //[HttpGet]
-        //public IEnumerable<Menu> Get()
-        //{
-        //    return _menuRepository.List().ToList();
-        //}
-
         [HttpGet]
         public ActionResult<IEnumerable<Menu>> Get()
         {
             return _menuRepository.List().ToList();
         }
-
-        //// GET: api/Menu/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public Menu Get(int id)
-        //{
-        //    return _menuRepository.FindById(id);
-        //}
 
         [HttpGet("{id}")]
         public ActionResult<Menu> Get(int id)
