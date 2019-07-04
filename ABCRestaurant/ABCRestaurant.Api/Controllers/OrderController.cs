@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ABCRestaurant.Data.Entities;
+using ABCRestaurant.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ABCRestaurant.Data.Entities;
-using ABCRestaurant.Data.Repositories;
+using System.Threading.Tasks;
 
 namespace ABCRestaurant.Api.Controllers
 {
@@ -34,14 +35,14 @@ namespace ABCRestaurant.Api.Controllers
 
         // POST: api/Order
         [HttpPost]
-        public void Post([FromBody] Order Obj)
+        public void Post(Order Obj)
         {
             this._orderRepository.Add(Obj);
         }
 
         // PUT: api/Order/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Order Obj)
+        public void Put(int id, Order Obj)
         {
             this._orderRepository.Update(Obj);
         }

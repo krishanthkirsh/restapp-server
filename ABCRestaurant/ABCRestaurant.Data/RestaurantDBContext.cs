@@ -1,14 +1,10 @@
 ﻿using ABCRestaurant.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ABCRestaurant.Data
 {
-    public class RestaurantDBContext : DbContext
+    public class RestaurantDBContext :DbContext
     {
         public RestaurantDBContext(DbContextOptions options) : base(options)
         { }
@@ -20,6 +16,5 @@ namespace ABCRestaurant.Data
         {
             base.OnModelCreating(builder);
         }
-
     }
 }
