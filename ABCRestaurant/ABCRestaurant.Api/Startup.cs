@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace ABCRestaurant.Api
 {
@@ -36,6 +37,21 @@ namespace ABCRestaurant.Api
             services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "ABC Restaurant API",
+                    Description = "ABC Restaurant ASP.NET Core 2.0 Web API",
+                    TermsOfService = "None",
+                    Contact = new Contact()
+                    {
+                        Name = "Kirshanth",
+                        Email = "Krishanthkirsh@gmail.com",
+                    }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +68,10 @@ namespace ABCRestaurant.Api
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ABC Restaurant API V1");
+            });
         }
     }
 }
