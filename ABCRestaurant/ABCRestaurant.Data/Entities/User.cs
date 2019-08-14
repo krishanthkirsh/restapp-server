@@ -8,5 +8,6 @@ namespace ABCRestaurant.Data.Entities
         : Entity<int>
     {
         public string UserName { get; set; }
+        public ICollection<Order> Order { get; set; }
     }
 }
